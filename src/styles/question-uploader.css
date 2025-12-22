@@ -1,0 +1,478 @@
+.question-uploader {
+  background: white;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 20px 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.uploader-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.uploader-header h3 {
+  margin: 0;
+  font-size: 18px;
+  color: #333;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #999;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+
+.close-btn:hover {
+  background: #f0f0f0;
+  color: #333;
+}
+
+/* Upload Section */
+.upload-section {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.file-input-wrapper {
+  position: relative;
+}
+
+#file-input {
+  display: none;
+}
+
+.file-input-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  border: 3px dashed #2196f3;
+  border-radius: 8px;
+  background: #f5f9ff;
+  cursor: pointer;
+  font-weight: 500;
+  color: #2196f3;
+  transition: all 0.3s;
+  font-size: 16px;
+}
+
+.file-input-label:hover {
+  background: #e8f4ff;
+  border-color: #1976d2;
+  color: #1976d2;
+}
+
+#file-input:disabled + .file-input-label {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn-preview {
+  padding: 12px 24px;
+  background: #2196f3;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn-preview:hover:not(:disabled) {
+  background: #1976d2;
+  box-shadow: 0 4px 12px rgba(33, 150, 243, 0.3);
+}
+
+.btn-preview:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.upload-info {
+  background: #e8f5e9;
+  padding: 15px;
+  border-radius: 6px;
+  border-left: 4px solid #4caf50;
+}
+
+.upload-info p {
+  margin: 8px 0;
+  color: #2e7d32;
+  font-size: 14px;
+}
+
+.upload-info p:first-child {
+  margin-top: 0;
+}
+
+.upload-info p:last-child {
+  margin-bottom: 0;
+}
+
+/* Preview Section */
+.preview-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.preview-header {
+  padding-bottom: 15px;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.preview-header h4 {
+  margin: 0 0 8px 0;
+  font-size: 16px;
+  color: #333;
+}
+
+.preview-info {
+  display: flex;
+  gap: 10px;
+  font-size: 13px;
+  color: #666;
+}
+
+.questions-preview {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-height: 600px;
+  overflow-y: auto;
+  padding-right: 10px;
+}
+
+.preview-question {
+  background: #f9f9f9;
+  border: 2px solid #e0e0e0;
+  border-radius: 6px;
+  padding: 15px;
+  transition: all 0.3s;
+}
+
+.preview-question:hover {
+  border-color: #2196f3;
+  box-shadow: 0 2px 8px rgba(33, 150, 243, 0.1);
+}
+
+.preview-question.disabled {
+  opacity: 0.6;
+  background: #f0f0f0;
+}
+
+.question-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.question-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  color: #333;
+}
+
+.question-checkbox input {
+  cursor: pointer;
+  width: 18px;
+  height: 18px;
+}
+
+.q-num {
+  color: #666;
+}
+
+.btn-delete-question {
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+
+.btn-delete-question:hover {
+  background: rgba(244, 67, 54, 0.1);
+}
+
+.question-body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.question-text {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 14px;
+  resize: vertical;
+}
+
+.question-text:disabled {
+  background: #f0f0f0;
+  cursor: not-allowed;
+}
+
+.options-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 5px 0;
+}
+
+.option-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.opt-label {
+  min-width: 30px;
+  font-weight: 600;
+  color: #333;
+}
+
+.option-row input[type="text"] {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.option-row input[type="text"]:disabled {
+  background: #f0f0f0;
+  cursor: not-allowed;
+}
+
+.option-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.option-checkbox input {
+  cursor: pointer;
+  width: 16px;
+  height: 16px;
+}
+
+.option-checkbox input:disabled {
+  cursor: not-allowed;
+}
+
+/* Radio replaced by visible checkmark */
+.option-radio {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.option-radio input[type="radio"] {
+  /* keep input for accessibility but hide visually */
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.checkmark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  color: #888;
+  font-weight: 700;
+  transition: all 0.15s ease-in-out;
+}
+
+.option-radio input[type="radio"]:checked + .checkmark,
+.checkmark.checked {
+  background-color: #4caf50;
+  border-color: #4caf50;
+  color: #fff;
+}
+
+.option-radio input[type="radio"]:disabled + .checkmark {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn-remove-option {
+  background: rgba(244, 67, 54, 0.1);
+  border: none;
+  color: #f44336;
+  padding: 6px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s;
+}
+
+.btn-remove-option:hover:not(:disabled) {
+  background: rgba(244, 67, 54, 0.2);
+}
+
+.btn-remove-option:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-add-option {
+  background: rgba(76, 175, 80, 0.1);
+  border: 1px solid #4caf50;
+  color: #4caf50;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  transition: all 0.2s;
+  align-self: flex-start;
+}
+
+.btn-add-option:hover:not(:disabled) {
+  background: rgba(76, 175, 80, 0.2);
+}
+
+.btn-add-option:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.points-input {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 8px;
+  font-size: 14px;
+}
+
+.points-input label {
+  font-weight: 500;
+  color: #666;
+}
+
+.points-input input {
+  width: 60px;
+  padding: 6px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.points-input input:disabled {
+  background: #f0f0f0;
+  cursor: not-allowed;
+}
+
+/* Preview Actions */
+.preview-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 2px solid #f0f0f0;
+}
+
+.btn-back {
+  padding: 10px 20px;
+  background: #f0f0f0;
+  color: #333;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn-back:hover {
+  background: #e0e0e0;
+}
+
+.btn-save-all {
+  flex: 1;
+  padding: 10px 20px;
+  background: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn-save-all:hover:not(:disabled) {
+  background: #45a049;
+  box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
+}
+
+.btn-save-all:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.error-alert {
+  background: #ffebee;
+  color: #c62828;
+  padding: 12px 16px;
+  border-radius: 6px;
+  border-left: 4px solid #f44336;
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+
+/* Scrollbar styling */
+.questions-preview::-webkit-scrollbar {
+  width: 8px;
+}
+
+.questions-preview::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.questions-preview::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+.questions-preview::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}

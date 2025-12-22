@@ -1,0 +1,120 @@
+/* Admin auth pages styling */
+.admin-auth-container {
+  max-width: 420px;
+  margin: 48px auto;
+  background: #ffffff;
+  border: 1px solid #e6e9ee;
+  border-radius: 10px;
+  padding: 28px;
+  box-shadow: 0 8px 30px rgba(20, 30, 60, 0.06);
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+}
+
+.admin-auth-container h2 {
+  margin: 0 0 18px 0;
+  font-size: 20px;
+  color: #0f1724;
+  text-align: center;
+}
+
+.admin-auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.admin-auth-form label {
+  font-size: 13px;
+  color: #556074;
+  margin-left: 4px;
+}
+
+.admin-auth-form input {
+  padding: 10px 12px;
+  border: 1px solid #d9e0ea;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #0b1220;
+  outline: none;
+  transition: box-shadow 0.15s, border-color 0.15s;
+}
+
+.pw-field { display: flex; gap: 8px; align-items: center; }
+.pw-field input { flex: 1; }
+.password-toggle { background: transparent; border: 1px solid #cbd5e1; color: #0b1220; padding: 8px 10px; border-radius: 8px; cursor: pointer; }
+
+.admin-auth-form input:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 6px 18px rgba(59, 130, 246, 0.08);
+}
+
+.admin-auth-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 6px;
+}
+
+.btn-primary {
+  background: linear-gradient(180deg,#2563eb,#1e40af);
+  color: #fff;
+  padding: 10px 14px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  flex: 1;
+}
+
+.btn-primary:hover { filter: brightness(0.97); }
+
+.btn-secondary {
+  background: transparent;
+  border: 1px solid #cbd5e1;
+  color: #0b1220;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.btn-resend {
+  background: #f59e0b;
+  color: #fff;
+  padding: 10px 14px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  transition: background 0.2s;
+}
+
+.btn-resend:hover:not(:disabled) {
+  background: #d97706;
+}
+
+.btn-resend:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.error {
+  color: #b91c1c;
+  background: #fff1f2;
+  border: 1px solid #fecaca;
+  padding: 8px 10px;
+  margin-top: 6px;
+  border-radius: 6px;
+  font-size: 13px;
+}
+
+.small-link {
+  font-size: 13px;
+  color: #2563eb;
+  text-decoration: none;
+}
+
+@media (max-width: 520px) {
+  .admin-auth-container { margin: 24px 16px; padding: 18px; }
+}
