@@ -23,17 +23,18 @@ export default function AdminLogin() {
   };
 
   return (
+      <div className="admin-auth-container-bg">
     <div className="admin-auth-container">
       <h2>Admin Login</h2>
       <form onSubmit={submit} className="admin-auth-form">
-        <div>
-          <label>Email</label>
+        <div className="input-field">
           <input type="text" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="you@domain.com" />
+           <label>Email</label>
         </div>
-        <div>
-          <label>Password</label>
+        <div  className="input-field">
           <div className="pw-field">
-            <input type={showPassword ? 'text' : 'password'} value={password} onChange={(e) => setPassword(e.target.value)} placeholder="••••••••" />
+            <input type={showPassword ? 'text' : 'password'} value={password} onChange={(e) => setPassword(e.target.value)} placeholder="" />
+                <label>Password</label>
             <button type="button" className="password-toggle" onClick={() => setShowPassword(s => !s)}>{showPassword ? 'Hide' : 'Show'}</button>
           </div>
         </div>
@@ -45,6 +46,7 @@ export default function AdminLogin() {
           <a href="/admin/forgot" className="small-link" style={{ marginLeft: 12 }}>Forgot password?</a>
         </div>
       </form>
+    </div>
     </div>
   );
 }

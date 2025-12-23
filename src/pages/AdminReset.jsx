@@ -60,19 +60,24 @@ export default function AdminReset() {
   };
 
   return (
+      <div className="admin-auth-container-bg">
     <div className="admin-auth-container">
       <h2>Reset Password</h2>
       <form className="admin-auth-form" onSubmit={submit}>
-        <label>New Password</label>
+        <div className="input-field">
         <div className="pw-field">
-          <input type={showPassword ? 'text' : 'password'} value={password} onChange={(e) => { setPassword(e.target.value); setStrength(computeStrength(e.target.value)); }} placeholder="New password" />
+          <input type={showPassword ? 'text' : 'password'} value={password} onChange={(e) => { setPassword(e.target.value); setStrength(computeStrength(e.target.value)); }} placeholder="" />
+        <label>New Password</label>
           <button type="button" className="password-toggle" onClick={() => setShowPassword(s => !s)}>{showPassword ? 'Hide' : 'Show'}</button>
         </div>
+        </div>
         {strength && <div style={{ marginTop: 6, marginBottom: 6 }}>Strength: <strong>{strength}</strong></div>}
-        <label>Confirm Password</label>
+        <div className="input-field">
         <div className="pw-field">
-          <input type={showConfirm ? 'text' : 'password'} value={confirm} onChange={(e) => setConfirm(e.target.value)} placeholder="Confirm password" />
+          <input type={showConfirm ? 'text' : 'password'} value={confirm} onChange={(e) => setConfirm(e.target.value)} placeholder="" />
+        <label>Confirm Password</label>
           <button type="button" className="password-toggle" onClick={() => setShowConfirm(s => !s)}>{showConfirm ? 'Hide' : 'Show'}</button>
+        </div>
         </div>
         <div className="admin-auth-actions">
           <button className="btn-primary" type="submit" disabled={loading}>{loading ? 'Saving...' : 'Save new password'}</button>
@@ -80,6 +85,7 @@ export default function AdminReset() {
         {error && <div className="error">{error}</div>}
         {msg && <div className="error" style={{ background: '#ecfccb', borderColor: '#bbf7d0', color:'#166534' }}>{msg}</div>}
       </form>
+    </div>
     </div>
   );
 }

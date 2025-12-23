@@ -65,7 +65,13 @@ export default function Home() {
   };
 
   return (
+    <div className="video-bg">
+  <video autoPlay muted loop playsinline>
+    <source src="./public/assets/brains.mp4"/>
+  </video>
+   <div className="video-overlay"></div>
     <div className="home">
+
       <div className="hero-section">
         <div className="hero-content">
           <h1>Welcome to CBT System</h1>
@@ -85,9 +91,15 @@ export default function Home() {
           <div className="illustration-box">📚</div>
         </div>
       </div>
+       <div className="quote">
+        <p>"Brainstorming turns problems into opportunities by exploring every possible solution..." <span> <h4>W.Edwards Deming</h4></span></p>
+       </div>
 
       <div className="features-section">
+        <div className="features-title">
         <h2>Why Choose Our Platform?</h2>
+
+        </div>
         <div className="features-grid">
           <div className="feature-card">
             <div className="feature-icon">⚡</div>
@@ -159,8 +171,13 @@ export default function Home() {
       )}
 
       <footer className="home-footer">
-        <p>&copy; 2024 CBT System. All rights reserved.</p>
+        <div className="developer">
+          <img src="././public\assets\images\user-profile.png"/>
+          <p>Developed By: Whizzer</p>
+        </div>
+        <p>&copy; {new Date().getFullYear()} CBT System. All rights reserved.</p>
       </footer>
+    </div>
     </div>
   );
 }

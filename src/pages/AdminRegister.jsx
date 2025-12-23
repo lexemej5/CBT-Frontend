@@ -118,23 +118,24 @@ export default function AdminRegister() {
   };
 
   return (
+    <div className="admin-auth-container-bg">
     <div className="admin-auth-container">
       <h2>Create Admin Account</h2>
       {!registered ? (
         <form onSubmit={submit} className="admin-auth-form">
-          <div>
-            <label>Name</label>
+          <div className="input-field">
             <input value={name} onChange={(e) => setName(e.target.value)} placeholder="Your name" />
+             <label>Name</label>
           </div>
-          <div>
-            <label>Email</label>
+          <div className="input-field">
             <input type="text" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="you@domain.com" />
+             <label>Email</label>
             {error && (error.includes('email') || error.includes('registered')) && <div className="error">{error}</div>}
           </div>
-          <div>
-            <label>Password</label>
+          <div className="input-field">
             <div className="pw-field">
               <input type={showPassword ? 'text' : 'password'} value={password} onChange={handlePasswordChange} placeholder="Choose a password" />
+               <label>Password</label>
               <button type="button" className="password-toggle" onClick={() => setShowPassword(s => !s)}>{showPassword ? 'Hide' : 'Show'}</button>
             </div>
             {passwordError && <div className="error">{passwordError}</div>}
@@ -189,6 +190,7 @@ export default function AdminRegister() {
           </div>
         </form>
       )}
+    </div>
     </div>
   );
 }

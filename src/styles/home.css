@@ -1,7 +1,33 @@
 /* Home Page Styles */
+
+.video-bg{
+display: grid;
+grid-template-areas: "stack";
+height: 100dvh;
+}
+
+.video-bg video{
+grid-area: stack;
+width: 100%;
+height: 100%;
+z-index: 1;
+overflow: hidden;
+object-fit: cover;
+}
+
+
+.video-overlay{
+background: #333;
+grid-area: stack;
+z-index: 2;
+opacity: 0.65;
+}
+
 .home {
-  min-height: calc(100vh - 70px);
-  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+ height: 100%;
+ grid-area: stack;
+ z-index: 2;
+ padding-top: 4em;
 }
 
 .hero-section {
@@ -12,12 +38,31 @@
   grid-template-columns: 1fr 1fr;
   gap: 60px;
   align-items: center;
+  height: 50dvh;
 }
 
+.quote{
+transform: translateY(55%);
+padding: 1em 3em;
+width: fit-content;
+margin: 0 auto;
+border-radius: 8px;
+}
+
+.quote p{
+width: 50ch;
+color: #fff;
+font-style: italic;
+font-size: clamp(0.7rem, calc(1vw + 0.7rem), 1.2rem);
+}
+
+.quote p span{
+font-weight: 700;
+}
 .hero-content h1 {
   font-size: 48px;
   font-weight: 700;
-  color: #1a202c;
+  color: #fff;
   margin-bottom: 15px;
   line-height: 1.2;
 }
@@ -98,9 +143,10 @@
 .features-section h2 {
   font-size: 36px;
   font-weight: 700;
-  color: #1a202c;
+  color: #fff;
   text-align: center;
-  margin-bottom: 50px;
+  margin-top: 6em;
+  margin-bottom: 1em;
 }
 
 .features-grid {
@@ -184,6 +230,28 @@
   font-size: 14px;
   opacity: 0.8;
 }
+
+
+.developer{
+display: flex;
+gap: 0.5em;
+align-items: center;
+flex-direction: column;
+margin-bottom: 0.5em;
+}
+
+.developer p{
+color:#667eea;
+}
+
+.developer img{
+width: 5rem;
+border-radius: 50%;
+object-fit: cover;
+display: block;
+border: 2px solid #fff;
+}
+
 
 /* Comments Section */
 .comments-section {
@@ -328,5 +396,12 @@
   .comments-grid {
     grid-template-columns: 1fr;
   }
+
+  .quote{
+ transform: translateY(100%);
+  }
+.quote p{
+width:100%;
+}
 }
 

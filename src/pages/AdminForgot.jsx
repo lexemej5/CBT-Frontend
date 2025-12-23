@@ -68,14 +68,17 @@ export default function AdminForgot() {
   };
 
   return (
+    <div className="admin-auth-container-bg">
     <div className="admin-auth-container">
       <h2>Forgot Password</h2>
 
       {/* Show send form only when not yet sent */}
       {!sent && (
         <form className="admin-auth-form" onSubmit={submit}>
-          <label>Email</label>
+          <div className="input-field">
           <input type="text" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="you@domain.com" />
+          <label>Email</label>
+          </div>
           <div className="admin-auth-actions">
             <button className="btn-primary" type="submit" disabled={loading}>{loading ? 'Sending...' : 'Send code'}</button>
           </div>
@@ -103,6 +106,7 @@ export default function AdminForgot() {
           </div>
         </form>
       )}
+    </div>
     </div>
   );
 }
