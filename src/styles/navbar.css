@@ -56,6 +56,11 @@
   font-weight: 500;
   transition: all 0.3s ease;
   position: relative;
+  display: inline-block;
+}
+
+.nav-link:visited {
+  color: white;
 }
 
 .nav-link::after {
@@ -72,6 +77,7 @@
 .nav-link:hover::after,
 .nav-link.active::after {
   width: 100%;
+  
 }
 
 .nav-link.admin-link {
@@ -131,11 +137,11 @@
   .nav-link {
     padding: 15px 20px;
     display: block;
-    width: 100%;
+    width: fit-content;
   }
 
   .nav-link::after {
-    display: none;
+    bottom: 10px;
   }
 
   .toggle-admin-btn {

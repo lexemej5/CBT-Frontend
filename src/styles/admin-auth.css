@@ -154,6 +154,16 @@ right: 10px;
   text-decoration: none;
 }
 
+
+@media(max-width: 768px){
+.admin-auth-actions{
+flex-direction: column;
+}
+.btn-primary{
+width: 100%;
+}
+}
+
 @media (max-width: 520px) {
   .admin-auth-container { margin: auto; padding: 18px; }
   .input-field input{
